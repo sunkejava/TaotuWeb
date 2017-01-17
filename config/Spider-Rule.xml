@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites>
+	<site>
+		<title>Beautyleg腿模写真图片网</title>
+		<charset>UTF-8</charset>
+		<url>http://www.beautylegmm.com</url>
+		<taotu-list-img-selector>.post_weidaopic a img</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.post_weidaopic .post_weidaopic_title a</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.empty</taotu-list-tags-selector>
+		<taotu-detail-content-selector>.post .intro</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>.post p a</taotu-detail-imgs-selector>
+		<taotu-detail-pages-selector>h2</taotu-detail-pages-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>
+	</site>
+	<site>
+		<title>美女图片-女神专区</title>
+		<charset>UTF-8</charset>
+		<url>http://www.zngirls.com/tag/</url>
+		<taotu-list-img-selector>.b-tmb a img</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.b-tmb ul a</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.b-tmb ul li:last-child</taotu-list-tags-selector>
+		<taotu-detail-content-selector>.albumInfo</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>#hgallery img</taotu-detail-imgs-selector>	
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>	
+	</site>
+	<site>
+		<title>美女图片-女神专区-图片</title>
+		<charset>UTF-8</charset>
+		<url>http://www.zngirls.com/girl/</url>
+		<taotu-list-img-selector>.empty</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.empty</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.empty</taotu-list-tags-selector>
+		<taotu-detail-content-selector>.empty</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>.empty</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.igalleryli_title a</taotu-detail-imgsbox-selector>
+		<taotu-detail-prev-selector>#pages .a1</taotu-detail-prev-selector>
+		<taotu-detail-next-selector>#pages .a1</taotu-detail-next-selector>		
+	</site>
+	<site>
+		<title>美女图片-女神专区-图片2</title>
+		<charset>UTF-8</charset>
+		<url>http://www.zngirls.com/g/</url>
+		<taotu-list-img-selector>.empty</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.empty</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.empty</taotu-list-tags-selector>
+		<taotu-detail-content-selector>.albumInfo</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>#hgallery img</taotu-detail-imgs-selector>	
+		<taotu-detail-imgsbox-selector>.igalleryli_title a</taotu-detail-imgsbox-selector>
+		<taotu-detail-prev-selector>#pages .a1</taotu-detail-prev-selector>
+		<taotu-detail-next-selector>#pages .a1</taotu-detail-next-selector>		
+	</site>
+	<site>
+		<title>美女图片-美女专区</title>
+		<charset>UTF-8</charset>
+		<url>http://www.zngirls.com/gallery/</url>
+		<taotu-list-img-selector>.galleryli_div .galleryli_link img</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.galleryli_title a</taotu-list-titleurl-selector>
+		<taotu-list-tags-selector>.empty</taotu-list-tags-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-detail-content-selector>.albumInfo</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>#hgallery img</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>		
+	</site>
+	<site>
+		<title>美图录</title>
+		<charset>UTF-8</charset>
+		<url>http://www.meitulu.com</url>
+		<taotu-list-img-selector>li a img</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.p_title a</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.img li p:nth-last-of-type(2)</taotu-list-tags-selector>
+		<taotu-detail-content-selector>.buchongshuoming</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>.content img</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>
+		<taotu-detail-prev-selector>#pages .a1</taotu-detail-prev-selector>
+		<taotu-detail-next-selector>#pages .a1</taotu-detail-next-selector>
+	</site>
+	<site>
+		<title>RouSi365</title>
+		<charset>UTF-8</charset>
+		<url>http://www.rosi365.com</url>
+		<taotu-list-img-selector>.post</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.postimg a</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.date</taotu-list-date-selector>
+		<taotu-list-tags-selector>.views</taotu-list-tags-selector>
+		<taotu-detail-content-selector>h3 a</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>.ngg-gallery-thumbnail a</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>		
+	</site>
+	<site>
+		<title>MM2</title>
+		<charset>UTF-8</charset>
+		<url>http://www.2mmei.net/ns</url>
+		<taotu-list-img-selector>#ka</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>#ha</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.empty</taotu-list-date-selector>
+		<taotu-list-tags-selector>.empty</taotu-list-tags-selector>
+		<taotu-detail-content-selector>#pt1</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>#tu img</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>
+	</site>
+	<site>
+		<title>第四印象</title>
+		<charset>UTF-8</charset>
+		<url>http://www.disi8.com</url>
+		<taotu-list-img-selector>.post</taotu-list-img-selector>
+		<taotu-list-titleurl-selector>.postimg a</taotu-list-titleurl-selector>
+		<taotu-list-date-selector>.date</taotu-list-date-selector>
+		<taotu-list-tags-selector>.views</taotu-list-tags-selector>
+		<taotu-detail-content-selector>h3 a</taotu-detail-content-selector>
+		<taotu-detail-imgs-selector>.ngg-gallery-thumbnail a</taotu-detail-imgs-selector>
+		<taotu-detail-imgsbox-selector>.empty</taotu-detail-imgsbox-selector>
+	</site>
+</sites>
