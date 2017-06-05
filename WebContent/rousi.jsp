@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="referrer" content="never">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>艾美眉--Ugirls尤果网</title>
 <meta name="description" content="美女图片库提供最新、最好看的美女图片,各种优质性感美女图片、mm图片、诱惑图片、萝莉图片、比基尼美女图片、丝袜美女、美 女模特、日本美女、韩国美女、清纯美女、美女写真、欧美美女等美女图片库，是目前国内最权的美女图片库。" />

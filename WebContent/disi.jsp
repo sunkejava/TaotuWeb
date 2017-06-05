@@ -33,6 +33,7 @@ SELECT CASE WHEN COUNT(*) MOD 15 > 0 THEN COUNT(*) DIV 15 +1 ELSE COUNT(*) DIV 1
 <c:forEach var="row2" items="${result2.rows}">
 <body onload=aonloadp(<%=nowPage %>,<c:out value="${row2.Pages}"/>)>
 </c:forEach>
+<meta name="referrer" content="never">
 <div class="main">
     <div class="header">
         <span id="menu">导航<ins></ins></span>

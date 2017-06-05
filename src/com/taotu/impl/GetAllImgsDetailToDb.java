@@ -20,7 +20,7 @@ public class GetAllImgsDetailToDb {
 			String aurl = new String(StringUtil.Base64decode(spsa[0]));
 			System.out.println("正在采集第【"+(i+1)+"/"+sps.length+"】地址的图片集合："+aurl);
 			TaotuDetailimpl taotuDetail = new TaotuDetailimpl();
-			TaotuDetail taotudetail = taotuDetail.getImgsBox(aurl,10);
+			TaotuDetail taotudetail = taotuDetail.getImgsBox(aurl,50);
 			DbUtil.insertTaotuDetail(taotudetail.getUrlsp(),taotudetail.getContent(),spsa[0],Integer.parseInt(spsa[1]));
 		}
 		Date endTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));

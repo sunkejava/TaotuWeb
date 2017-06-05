@@ -3,6 +3,7 @@ package com.taotu.impl;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.taotu.entity.Taotu;
@@ -15,7 +16,7 @@ public class GetAllImgboxsModel {
 	public boolean getAllBoxsMod() throws ParseException{
 		boolean flag = false;
 		GetAllUrls gets = new GetAllUrls();
-		String sps=DbUtil.getresult();
+		//String sps=DbUtil.getresult();
 		SimpleDateFormat dfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date beginTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 		String siteurls = "";
@@ -39,18 +40,17 @@ public class GetAllImgboxsModel {
 		System.err.println("开始获取图片地址：");
 		for(int i=0;i<urls.length;i++){
 			Taotuimpl beli = new Taotuimpl();
-			Taotu[] taotu = beli.getsTaotuList(urls[i].replace("null", "").replace(" ", ""),20);
-			
-			for(Taotu tsa : taotu){
-				if(sps.contains(StringUtil.Base64encode(tsa.getUrl()))){
-					//System.out.println("已存在结果集："+tsa.toString());
-					
-				}else{
-					System.out.println("开始插入："+tsa.toString());
-					flag = DbUtil.insertTaotu(tsa);
-					
+			ArrayList<Taotu> taotu = beli.getsTaotuList(urls[i].replace("null", "").replace(" ", ""),20);
+			System.out.println("获取长度："+taotu.size());
+			if(taotu.isEmpty() == false){
+				System.out.println("taotu is not null"+taotu.get(0).toString());
+				for(Taotu tsa : taotu){			
+						System.out.println("开始插入："+tsa.toString());
+						flag = DbUtil.insertTaotu(tsa);	
 				}
-				
+			}else{
+				System.out.println("没有最新数据！");
+				flag=true;
 			}
 		}
 		Date endTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));

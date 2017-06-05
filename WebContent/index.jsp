@@ -9,6 +9,7 @@
 <title>艾美眉</title>
 <meta name="description"
 	content="艾美眉手机版为大家提供美女图片写真、性感清纯美女" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="images/favicon.ico" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="mobile/js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="mobile/js/common.js"></script>
 </head>
+<meta name="referrer" content="never">
 <body>
 	<div class="main">
 		<div class="header">

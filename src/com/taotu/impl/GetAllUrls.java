@@ -83,6 +83,7 @@ public  class GetAllUrls extends AbstractSpider{
 		webSites[++a]="http://www.meitulu.com/t/chemo/";	
 		webSites[++a]="http://www.meitulu.com/t/taste/";	
 		webSites[++a]="http://www.meitulu.com/t/miitao/";
+	//---------------------------------------------------------
 //		webSites[++a]="http://www.meitulu.com/t/nvshen/";
 //		webSites[++a]="http://www.meitulu.com/t/jipin/";
 //		webSites[++a]="http://www.meitulu.com/t/nenmo/";
@@ -138,6 +139,7 @@ public  class GetAllUrls extends AbstractSpider{
 					doc.setBaseUri(webSite);
 					Elements nextp = doc.select(".page-navigator li a");
 					int sumnums = Integer.parseInt(nextp.get(nextp.size()-2).text());
+					System.out.println("Beautylegmm总页数:"+sumnums);
 					zongshu = zongshu+sumnums;
 					System.err.println("站点【"+webSites[i]+"】的数据共计"+sumnums+"页，准备获取。。。。。");
 					for(int p = 1;p<=sumnums;p++){

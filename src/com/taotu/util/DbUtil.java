@@ -51,7 +51,7 @@ public class DbUtil {
 			e.printStackTrace();
 			System.out.println("数据库连接失败！！");
 		}
-		System.out.println(DbUtil.getsumPagesofTable("15", "MM2"));
+		System.out.println(DbUtil.isindb("aHR0cHM6Ly93d3cubWVpdHVsdS5jb20vaXRlbS82ODY4Lmh0bWw="));
 	}
 
 	public static boolean insertTaotu(Taotu taotu) {
@@ -106,9 +106,11 @@ public class DbUtil {
 				ps.setString(3, conText);
 				ps.setInt(4, pid);
 				result = ps.executeUpdate();
+				System.out.println("开始插入：" + taotus[i] + "--" + purl + "--" + conText + "--" + pid);
 			}
 			if (result > 0) {
 				resu = true;
+
 			} else {
 				resu = false;
 			}
@@ -116,7 +118,7 @@ public class DbUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("数据库连接失败！！");
-		}finally {
+		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
@@ -164,14 +166,17 @@ public class DbUtil {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return a;
 	}
-	
+
 	/**
 	 * 获取db_taotu查询总页数
-	 * @param limit   页容量
-	 * @param id 条件
+	 * 
+	 * @param limit
+	 *            页容量
+	 * @param id
+	 *            条件
 	 * @return
 	 */
 	public static String getsumPagesofTable(String limit, String id) {
@@ -180,7 +185,9 @@ public class DbUtil {
 		Connection con = null;
 		try {
 			con = dbutil.getCon();
-			String sql = "SELECT CASE WHEN COUNT(*) MOD "+limit+" > 0 THEN COUNT(*) DIV "+limit+" +1 ELSE COUNT(*) DIV "+limit+" END AS Pages FROM db_taotu WHERE typeName = '"+id+"' OR NAME LIKE '%"+id+"%' OR tagName LIKE '%"+id+"%'";
+			String sql = "SELECT CASE WHEN COUNT(*) MOD " + limit + " > 0 THEN COUNT(*) DIV " + limit
+					+ " +1 ELSE COUNT(*) DIV " + limit + " END AS Pages FROM db_taotu WHERE typeName = '" + id
+					+ "' OR NAME LIKE '%" + id + "%' OR tagName LIKE '%" + id + "%'";
 			PreparedStatement pstmt;
 			pstmt = (PreparedStatement) con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
@@ -199,9 +206,10 @@ public class DbUtil {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return a;
 	}
+
 	public static String getresult() {
 		String a = "";
 		DbUtil dbutil = new DbUtil();
@@ -237,7 +245,7 @@ public class DbUtil {
 		String result = "";
 		try {
 			con = dbutil.getCon();
-			String sql = "SELECT * FROM db_taotu WHERE id NOT IN (SELECT pid FROM (SELECT pid FROM db_taotudetail GROUP BY pid)b)";
+			String sql = "SELECT * FROM db_taotu WHERE id NOT IN (SELECT  pid FROM db_taotudetail GROUP BY pid)";
 			PreparedStatement pstmt;
 			pstmt = (PreparedStatement) con.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
@@ -252,14 +260,14 @@ public class DbUtil {
 			System.out.println("============================");
 		} catch (Exception e1) {
 			System.err.println("数据库连接失败！！");
-		}finally {
+		} finally {
 			try {
 				con.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -282,6 +290,43 @@ public class DbUtil {
 			pstmt.close();
 		} catch (Exception e1) {
 			System.err.println("数据库连接失败！！");
+			return false;
+		} finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 判断b是否已经存在，存在返回true
+	 * @param b
+	 * @return
+	 */
+	public static boolean isindb(String b) {
+		DbUtil dbutil = new DbUtil();
+		Connection con = null;
+		boolean result = false;
+		try {
+			con = dbutil.getCon();
+			PreparedStatement pstmt;
+			String sql = "select * FROM db_taotu WHERE url = '" + b+"'";
+			pstmt = (PreparedStatement) con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			System.out.println("============================");
+			rs.last();
+			int rsRowCount= rs.getRow();
+			if (rsRowCount >= 1) {
+				result = true;
+			} else {
+				result = false;
+			}
+			pstmt.close();
+		} catch (Exception e1) {
+			System.err.println("数据库连接失败！！"+e1);
 			return false;
 		} finally {
 			try {

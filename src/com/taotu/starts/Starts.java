@@ -20,7 +20,7 @@ public class Starts {
 			System.out.println(times);
 			System.out.println("执行完毕当前时间"+formatter.format(Calendar.getInstance().getTime()));
         } catch (Exception e) {
-            System.out.println("-------------解析信息发生异常--------------");
+            System.out.println("-------------解析信息发生异常--------------"+e);
         }
 	}
 }

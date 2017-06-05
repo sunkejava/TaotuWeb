@@ -2,6 +2,7 @@ package com.taotu.test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.jsoup.Jsoup;
@@ -139,7 +140,7 @@ public class TestCase extends AbstractSpider{
 	@Test
 	public void testGetTaotuList(){
 		Taotuimpl beli = new Taotuimpl();
-		Taotu[] taotu = beli.getsTaotuList("http://www.beautylegmm.com",10);
+		ArrayList<Taotu> taotu = beli.getsTaotuList("http://www.beautylegmm.com",10);
 		int a=0;
 		for(Taotu ts : taotu){
 			System.out.println((a+1)+":"+ts);

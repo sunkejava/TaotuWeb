@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%
-			String search = new String(request.getParameter("search").getBytes("iso-8859-1"), "utf-8");
+			String search = request.getParameter("search");
 			String searcha = "%"+search+"%";
 			String nowPage = request.getParameter("page");
 			if(nowPage==null || nowPage == ""){
@@ -16,6 +16,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="referrer" content="never">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>艾美眉--搜索：<%=search %></title>
 <meta name="description" content="美女图片库提供最新、最好看的美女图片,各种优质性感美女图片、mm图片、诱惑图片、萝莉图片、比基尼美女图片、丝袜美女、美 女模特、日本美女、韩国美女、清纯美女、美女写真、欧美美女等美女图片库，是目前国内最权的美女图片库。" />
@@ -251,7 +252,7 @@ SELECT * FROM db_taotu where tagName like '<%=searcha %>' or name LIKE '<%=searc
     		<div id="images">
     			<c:forEach var="arow" items="${result1.rows}">
                 <div class="items">
-                	<a href="getdetail.jsp?u=<c:out value='${arow.id}'/>" target="black">
+                	<a href="getdetail.jsp?u=<c:out value='${arow.id}'/>" target="_black">
                 		<img src="<c:out value='${arow.imgurl}'/>">
                 	</a>
                 	<span><c:out value='${arow.name}'/></span>

@@ -33,7 +33,9 @@ contentType="text/html; charset=utf-8"
 <script type="text/javascript" src="mobile/js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="mobile/js/common.js"></script>
 </head>
+<meta name="referrer" content="never">
 <body>
+
 <div class="main">
 <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/db_taotu?useUnicode=true&characterEncoding=utf8"
@@ -298,10 +300,10 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
     <h3>猜你喜欢</h3>
 </div>
 <sql:query dataSource="${snapshot}" var="result3">
-SELECT * FROM db_taotu WHERE id BETWEEN (
+ SELECT * FROM db_taotu WHERE id BETWEEN (
 SELECT CASE WHEN <%=us %><=(SELECT COUNT(*)-6 AS sl FROM db_taotu) THEN id+1 ELSE id-6 END AS startID FROM db_taotu WHERE id = <%=us %>) AND
 (SELECT CASE WHEN <%=us %><=(SELECT COUNT(*)-6 AS sl FROM db_taotu) THEN id+6 ELSE id-1 END AS endID FROM db_taotu WHERE id = <%=us %>);
-</sql:query>
+ </sql:query>
 			
 <div class="container">
     <div id="images">

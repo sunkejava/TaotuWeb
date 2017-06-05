@@ -19,6 +19,7 @@
 <script type="text/javascript" src="mobile/js/jquery.masonry.min.js"></script>
 <script type="text/javascript" src="mobile/js/common.js"></script>
 </head>
+<meta name="referrer" content="never">
 <%
 	String nowPage = request.getParameter("page");
 	if(nowPage==null || nowPage == "" || Integer.parseInt(nowPage) < 1){
