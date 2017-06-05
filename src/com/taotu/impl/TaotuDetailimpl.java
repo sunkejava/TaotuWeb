@@ -35,6 +35,7 @@ public class TaotuDetailimpl extends AbstractSpider{
 			Elements contentElements = doc.select(contentSelector);
 			Elements contentElements2 = doc.select(".c_l");
 			Elements imgsElements = doc.select(imgsSelector);
+			System.out.println("imgsElements:"+imgsElements);
 			TaotuDetail taotudetail = new TaotuDetail();
 			int a = 0;
 			if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.MM2.getUrl()){
@@ -42,6 +43,7 @@ public class TaotuDetailimpl extends AbstractSpider{
 				String[] resulturls = new String[imgsElements.size()];
 				System.out.println("正在获取网站：【"+url+"】的图片集合，共计：【"+imgsElements.size()+"】张图片！！");
 				for(Element els : imgsElements){
+					System.out.println("地址："+els);
 					resulturls[a] = els.absUrl("name");
 					a++;
 				}
