@@ -40,8 +40,8 @@ public class GetAllImgboxsModel {
 		String temp = "";
 		System.err.println("开始获取图片地址：");
 		for(int i=0;i<urls.length;i++){
-			if(temp.contains(urls[i].substring(0, urls[i].length()-3))){
-				System.out.println("比对值："+urls[i].substring(0, 15));
+			if(temp.contains(urls[i].substring(0, urls[i].length()-8))){
+				System.out.println("比对值："+urls[i].substring(0, urls[i].length()-8));
 				continue;
 			}else{
 			Taotuimpl beli = new Taotuimpl();
