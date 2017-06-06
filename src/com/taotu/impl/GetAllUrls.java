@@ -24,7 +24,7 @@ public  class GetAllUrls extends AbstractSpider{
 	 */
 	public String getWebsiteUrls() throws ParseException{
 		String webSitesresult = "";
-		String[] webSites = new String[51];
+		String[] webSites = new String[1];
 		int a =-1;
 
 		/**
@@ -33,7 +33,7 @@ public  class GetAllUrls extends AbstractSpider{
 		 * webSites[++a]="http://www.rosi365.com/rosi/rosi";
 		 */
 		webSites[++a]="http://www.beautylegmm.com/";
-		webSites[++a]="http://www.2mmei.net/ns";
+		/*webSites[++a]="http://www.2mmei.net/ns";
 		webSites[++a]="http://www.meitulu.com/t/bomb.tv/";	
 		webSites[++a]="http://www.meitulu.com/t/wpb-net/";	
 		webSites[++a]="http://www.meitulu.com/t/ribenmeinv/";	
@@ -82,7 +82,7 @@ public  class GetAllUrls extends AbstractSpider{
 		webSites[++a]="http://www.meitulu.com/t/x-tgirl/";	
 		webSites[++a]="http://www.meitulu.com/t/chemo/";	
 		webSites[++a]="http://www.meitulu.com/t/taste/";	
-		webSites[++a]="http://www.meitulu.com/t/miitao/";
+		webSites[++a]="http://www.meitulu.com/t/miitao/";*/
 	//---------------------------------------------------------
 //		webSites[++a]="http://www.meitulu.com/t/nvshen/";
 //		webSites[++a]="http://www.meitulu.com/t/jipin/";
@@ -109,7 +109,7 @@ public  class GetAllUrls extends AbstractSpider{
 		SimpleDateFormat dfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date beginTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 		System.err.println("开始采集所有站点数据：");
-		for(int i = 0;i<51;i++){
+		for(int i = 0;i<1;i++){
 			System.err.println("正在获取站点【"+webSites[i]+"】的可采集数据：");
 			String webSite =webSites[i];
 			String results;
@@ -145,7 +145,7 @@ public  class GetAllUrls extends AbstractSpider{
 					for(int p = 1;p<=sumnums;p++){
 						System.err.println("正在获取站点【"+webSites[i]+"】的第【"+p+"/"+sumnums+"】页的可采集数据：");
 						String siteUrl = nextp.get(nextp.size()-2).absUrl("href").replace(nextp.get(nextp.size()-2).text(), Integer.toString(p));
-						//System.out.println(siteUrl);
+						System.out.println("siteUrl:"+siteUrl);
 						webSitesresult = webSitesresult + siteUrl + ",";
 						if(p==sumnums){
 							System.err.println("站点【"+webSites[i]+"】的数据采集完毕，共计【"+sumnums+"】条的数据，已采集：【"+p+"】！！！");

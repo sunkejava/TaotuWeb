@@ -37,8 +37,13 @@ public class GetAllImgboxsModel {
 		
 		FileUtil.contentToTxt("C:/siteurls.txt", siteurls);
 		String[] urls = siteurls.split(",");
+		String temp = "";
 		System.err.println("开始获取图片地址：");
 		for(int i=0;i<urls.length;i++){
+			if(temp.contains(urls[i].substring(0, urls[i].length()-3))){
+				System.out.println("比对值："+urls[i].substring(0, 15));
+				continue;
+			}else{
 			Taotuimpl beli = new Taotuimpl();
 			ArrayList<Taotu> taotu = beli.getsTaotuList(urls[i].replace("null", "").replace(" ", ""),20);
 			System.out.println("获取长度："+taotu.size());
@@ -49,8 +54,10 @@ public class GetAllImgboxsModel {
 						flag = DbUtil.insertTaotu(tsa);	
 				}
 			}else{
+				temp=urls[i];
 				System.out.println("没有最新数据！");
 				flag=true;
+			}
 			}
 		}
 		Date endTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
