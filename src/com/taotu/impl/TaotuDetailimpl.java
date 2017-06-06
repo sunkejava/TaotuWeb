@@ -30,7 +30,7 @@ public class TaotuDetailimpl extends AbstractSpider{
 			Document doc = Jsoup.parse(result);
 			doc.setBaseUri(url);
 			Map<String,String> contexts=NovelSpiderUtil.getContext(TaotuSiteEnum.getEnumByUrl(url));
-			String contentSelector = contexts.get("taotu-detail-content-selector") == "" ? "没有对应的简介内容，不好意思" : contexts.get("taotu-detail-content-selector");
+			String contentSelector = contexts.get("taotu-detail-content-selector").isEmpty() ? "没有对应的简介内容，不好意思" : contexts.get("taotu-detail-content-selector");
 			String imgsSelector = contexts.get("taotu-detail-imgs-selector");
 			Elements contentElements = doc.select(contentSelector);
 			Elements contentElements2 = doc.select(".c_l");
@@ -54,18 +54,18 @@ public class TaotuDetailimpl extends AbstractSpider{
 				String pagesSelector = contexts.get("taotu-detail-pages-selector");
 				Elements pagesElements = doc.select(pagesSelector);
 				int sumnums = Integer.parseInt(pagesElements.text().substring(pagesElements.text().indexOf("[",3)+1, pagesElements.text().length()-2));
-				System.out.println("总页数："+sumnums);
-				String firstImgUrl = imgsElements.get(0).absUrl("href");
+				String firstImgUrl = imgsElements.get(0).absUrl("src");
+				System.out.println("firstImgUrl"+firstImgUrl);
 				System.out.println("正在获取网站：【"+url+"】的图片集合，共计：【"+sumnums+"】张图片！！");
 				String[] resulturls = new String[sumnums];
 				for(int i =0;i< sumnums;i++){
 					System.out.println(firstImgUrl);
 					if(i<10){
-						resulturls[i] = firstImgUrl.replace("0000", "000"+Integer.toString(i));
+						resulturls[i] = firstImgUrl.replace(firstImgUrl.substring(firstImgUrl.length()-8,firstImgUrl.length()-4), "000"+Integer.toString(i));
 					}else if(i<100 && i> 9){
-						resulturls[i] = firstImgUrl.replace("0000", "00"+Integer.toString(i));
+						resulturls[i] = firstImgUrl.replace(firstImgUrl.substring(firstImgUrl.length()-8,firstImgUrl.length()-4), "00"+Integer.toString(i));
 					}else{
-						resulturls[i] = firstImgUrl.replace("0000", "0"+Integer.toString(i));
+						resulturls[i] = firstImgUrl.replace(firstImgUrl.substring(firstImgUrl.length()-8,firstImgUrl.length()-4), "0"+Integer.toString(i));
 					}
 					
 				}
