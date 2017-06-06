@@ -249,7 +249,7 @@ SELECT * FROM db_taotu where typeName = "MM2" ORDER BY id DESC LIMIT <%=startnum
 			<div id="images">
 				<c:forEach var="arow" items="${result1.rows}">
 					<div class="items">
-						<a href="getdetail.jsp?u=<c:out value='${arow.id}'/>" target="black"> <img
+						<a href="getdetail.jsp?u=<c:out value='${arow.id}'/>" target="_black"> <img
 							src="<c:out value='${arow.imgurl}'/>">
 						</a> <span><c:out value='${arow.name}' /></span>
 						<p>
