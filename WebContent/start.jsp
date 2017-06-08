@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.taotu.impl.GetAllImgboxsModel,java.text.ParseException,com.taotu.impl.GetAllImgsDetailToDb;" %>
+<%@ page import="com.taotu.impl.GetAllImgboxsModel,com.taotu.util.DbUtil,java.text.ParseException,com.taotu.impl.GetAllImgsDetailToDb" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,10 +10,12 @@
 <meta name="referrer" content="never">
 <body>
 <%
-			GetAllImgboxsModel a = new GetAllImgboxsModel();
-			GetAllImgsDetailToDb b = new GetAllImgsDetailToDb();
+			
 try {
+	GetAllImgboxsModel a = new GetAllImgboxsModel();
+	GetAllImgsDetailToDb b = new GetAllImgsDetailToDb();
 	a.getAllBoxsMod();
+	DbUtil.deleteDistinct();
 	String times = b.insertImgstoDb();
 	out.print(times);
 } catch (ParseException e) {
