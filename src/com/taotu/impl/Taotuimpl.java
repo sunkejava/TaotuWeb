@@ -176,7 +176,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setTitle(elss.text());
 					taotu.setUrl(elss.absUrl("href"));
 					taotu.setTagsName(tags.get(a).text());
-					taotu.setImgUrl(StringUtil.betweenSting(as.get(a).toString(), "url('", "')").replace("amp;", ""));
+					taotu.setImgUrl(as.get(a).absUrl("src"));//StringUtil.betweenSting(as.get(a).toString(), "url('", "')").replace("amp;", ""
 					taotu.setTypeName(TaotuSiteEnum.getEnumByUrl(url).toString());
 					taotu.setAddTime(dateas.get(a).text().replace(".", "-"));
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
