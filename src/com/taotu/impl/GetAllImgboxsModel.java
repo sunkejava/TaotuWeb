@@ -46,17 +46,16 @@ public class GetAllImgboxsModel {
 			}else{
 			Taotuimpl beli = new Taotuimpl();
 			ArrayList<Taotu> taotu = beli.getsTaotuList(urls[i].replace("null", "").replace(" ", ""),30);
+			if(taotu.isEmpty() == false){	
 				for(Taotu tsa : taotu){
-					if(tsa.getImgUrl().isEmpty() == false){
-						System.out.println("开始插入："+tsa.toString());
-						flag = DbUtil.insertTaotu(tsa);	
-					}else{
-						temp=urls[i];
-						System.out.println("没有最新数据！");
-						flag=true;
+							System.out.println("开始插入："+tsa.toString());
+							flag = DbUtil.insertTaotu(tsa);	
 					}
+				}else{
+					temp=urls[i];
+					System.out.println("没有最新数据！");
+					flag=true;
 				}
-				
 			
 			}
 		}
