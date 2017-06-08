@@ -73,6 +73,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
+					a=a+1;
 				}
 				
 			}else if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.BeautylegMM.getUrl()){
@@ -91,6 +92,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
+					a=a+1;
 					
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.BeautylegMM.getUrl());
@@ -110,6 +112,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
+					a=a+1;
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.DiSi8.getUrl());
 			}else if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.MeiNvTuPian.getUrl()){
@@ -128,6 +131,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
+					a=a+1;
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.MeiNvTuPian.getUrl());
 			}else if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.MeiNvTuPianNvShen.getUrl()){
@@ -146,6 +150,7 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
+					a=a+1;
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.MeiNvTuPianNvShen.getUrl());
 			}else if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.MeiTuLu.getUrl()){
@@ -163,7 +168,9 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setAddTime(StringUtil.getNowTime("yyyy-MM-dd"));
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
+					
 					}
+					a=a+1;
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.MeiTuLu.getUrl());
 			}else if(TaotuSiteEnum.getEnumUrl(url)==TaotuSiteEnum.RouSi365.getUrl()){
@@ -176,13 +183,13 @@ public  class Taotuimpl extends AbstractSpider{
 					taotu.setTitle(elss.text());
 					taotu.setUrl(elss.absUrl("href"));
 					taotu.setTagsName(tags.get(a).text());
-					taotu.setImgUrl(as.get(a).absUrl("src"));//StringUtil.betweenSting(as.get(a).toString(), "url('", "')").replace("amp;", ""
+					taotu.setImgUrl(StringUtil.betweenSting(as.get(a).toString(), "url('", "')").replace("amp;", ""));//
 					taotu.setTypeName(TaotuSiteEnum.getEnumByUrl(url).toString());
 					taotu.setAddTime(dateas.get(a).text().replace(".", "-"));
 					taotu.setCrawlTime(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 					taoTuList.add(taotu);
 					}
-					
+					a=a+1;
 				}
 				System.out.println(TaotuSiteEnum.getEnumUrl(url)+"----"+TaotuSiteEnum.RouSi365.getUrl());
 			}else{
