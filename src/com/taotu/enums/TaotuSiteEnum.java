@@ -9,7 +9,7 @@ public enum TaotuSiteEnum {
 	BeautylegMM(1,"beautylegmm.com"),
 	MeiNvTuPian(2,"zngirls.com/gallery/"),
 	MeiTuLu(3,"meitulu.com"),
-	MM2(4,"2mmei.net"),
+	MM2(4,"33mn.net"),
 	RouSi365(5,"rosi365.com"),
 	DiSi8(6,"disi8.com"),
 	MeiNvTuPianNvShen(7,"zngirls.com/tag/"),

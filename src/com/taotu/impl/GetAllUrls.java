@@ -33,7 +33,7 @@ public  class GetAllUrls extends AbstractSpider{
 		 * webSites[++a]="http://www.rosi365.com/rosi/rosi";
 		 */
 		webSites[++a]="http://www.beautylegmm.com/";
-		webSites[++a]="http://www.2mmei.net/ns";
+		webSites[++a]="http://www.33mn.net/ns";
 		webSites[++a]="http://www.meitulu.com/t/bomb.tv/";	
 		webSites[++a]="http://www.meitulu.com/t/wpb-net/";	
 		webSites[++a]="http://www.meitulu.com/t/ribenmeinv/";	
