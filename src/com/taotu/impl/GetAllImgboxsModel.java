@@ -40,10 +40,11 @@ public class GetAllImgboxsModel {
 		String temp = "";
 		System.err.println("开始获取图片地址：");
 		for(int i=0;i<urls.length;i++){
-			if(temp.contains(urls[i].substring(0, urls[i].length()-6))){
-				System.out.println("比对值："+urls[i].substring(0, urls[i].length()-6));
+			if(temp.contains(urls[i].substring(0, urls[i].length()-8))){
+				System.out.println("比对值："+urls[i].substring(0, urls[i].length()-8));
 				continue;
 			}else{
+			temp = "";
 			Taotuimpl beli = new Taotuimpl();
 			ArrayList<Taotu> taotu = beli.getsTaotuList(urls[i].replace("null", "").replace(" ", ""),30);
 			if(taotu.isEmpty() == false){	
@@ -53,7 +54,7 @@ public class GetAllImgboxsModel {
 					}
 				}else{
 					temp=urls[i];
-					System.out.println("没有最新数据！");
+					System.out.println(temp+"没有最新数据！");
 					flag=true;
 				}
 			
