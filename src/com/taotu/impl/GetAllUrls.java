@@ -243,7 +243,7 @@ public  class GetAllUrls extends AbstractSpider{
 						for(int p = 1;p<=sumnums;p++){
 							System.err.println("正在获取站点【"+webSites[i]+"】的第【"+p+"/"+sumnums+"】页的可采集数据：");
 							String siteUrl;
-							if(sumnums==1){
+							if(p==1){
 								siteUrl= webSite;
 							}else{
 								siteUrl= nextp.get(nextp.size()-2).absUrl("href").replace(nextp.get(nextp.size()-2).text(), Integer.toString(p));
