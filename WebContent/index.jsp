@@ -64,6 +64,9 @@
 					<a href="search.jsp?search=推女神" target="_blank">
 					    推女神
 					</a>
+					<a href="search.jsp?search=头条女神" target="_blank">
+					   头条女神
+					</a>
 					<a href="search.jsp?search=BWH套图" target="_blank">
 					    BWH套图
 					</a>

@@ -73,6 +73,9 @@ SELECT * FROM db_taotu WHERE id = <%=us %>;
 					<a href="search.jsp?search=推女郎" target="_blank">
 					    推女郎
 					</a>
+					<a href="search.jsp?search=头条女神" target="_blank">
+					   头条女神
+					</a>
 					<a href="search.jsp?search=DGC写真" target="_blank">
 					    DGC写真
 					</a>

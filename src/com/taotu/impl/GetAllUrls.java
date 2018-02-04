@@ -24,7 +24,7 @@ public  class GetAllUrls extends AbstractSpider{
 	 */
 	public String getWebsiteUrls() throws ParseException{
 		String webSitesresult = "";
-		String[] webSites = new String[52];
+		String[] webSites = new String[53];
 		int a =-1;
 
 		/**
@@ -84,11 +84,12 @@ public  class GetAllUrls extends AbstractSpider{
 		webSites[++a]="https://www.meitulu.com/t/chemo/";	
 		webSites[++a]="https://www.meitulu.com/t/taste/";	
 		webSites[++a]="https://www.meitulu.com/t/miitao/";
+		webSites[++a]="https://www.meitulu.com/t/toutiaonvshen/";
 		int zongshu = 0;
 		SimpleDateFormat dfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date beginTime = dfs.parse(StringUtil.getNowTime("yyyy-MM-dd HH:mm:ss"));
 		System.err.println("开始采集所有站点数据：");
-		for(int i = 0;i<52;i++){
+		for(int i = 0;i<53;i++){
 			System.err.println("正在获取站点【"+webSites[i]+"】的可采集数据：");
 			String webSite =webSites[i];
 			String results;

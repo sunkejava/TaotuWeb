@@ -12,33 +12,41 @@
 <title>JSP Mysql操作实例</title>
 <link href="mobile/css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
 </head>
 <%
 	String nowPage = request.getParameter("page");
+	String whereTj = request.getParameter("where");
 	if(nowPage==null || nowPage == ""){
 		nowPage = "1";
 	}
-	int startnum = (Integer.parseInt(nowPage)-1)*15;
+	if(whereTj==null || whereTj == ""){
+		whereTj = "where typeName = 'MeiTuLu'";
+	}else{
+		whereTj = "where "+whereTj;
+	}
+	int startnum = (Integer.parseInt(nowPage)-1)*100;
 %>
+<btn onclick="jm()">解码</btn>
 <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/db_taotu?useUnicode=true&characterEncoding=utf8"
      user="root"  password="perp123"/>
      <sql:query dataSource="${snapshot}" var="result1">
-SELECT CASE WHEN COUNT(*) MOD 15 > 0 THEN COUNT(*) DIV 15 +1  END AS Pages FROM db_taotu WHERE typeName = "MM2";
+SELECT CASE WHEN COUNT(*) MOD 100 > 0 THEN COUNT(*) DIV 100 +1  END AS Pages FROM db_taotu <%=whereTj %>;
 </sql:query>
 <c:forEach var="row1" items="${result1.rows}">
 <body onload=onload(<%=nowPage %>,<c:out value="${row1.Pages}"/>)>
 </c:forEach>
 <sql:query dataSource="${snapshot}" var="result">
-SELECT * from db_taotu WHERE tagName like "%丝袜%" limit <%=startnum %>,15;
+SELECT * from db_taotu <%=whereTj %> limit <%=startnum %>,100;
 </sql:query>
- 
-<table border="1" width="100%">
+<table border="1" width="100%" id="tb1">
 <tr>
    <th>ID</th>
    <th>Name</th>
    <th>url</th>
    <th>ImgUrl</th>
+   <th>tagName</th>
    <th>typeName</th>
    <th>addTime</th>
    <th>crawlTime</th>
@@ -49,6 +57,7 @@ SELECT * from db_taotu WHERE tagName like "%丝袜%" limit <%=startnum %>,15;
    <td><c:out value="${row.name}"/></td>
    <td><c:out value="${row.url}"/></td>
    <td><c:out value="${row.imgurl}"/></td>
+   <td><c:out value="${row.tagName}"/></td>
    <td><c:out value="${row.typeName}"/></td>
    <td><c:out value="${row.addTime}"/></td>
    <td><c:out value="${row.crawlTime}"/></td>
@@ -97,6 +106,17 @@ SELECT * from db_taotu WHERE tagName like "%丝袜%" limit <%=startnum %>,15;
 			$("#pagnation").find("div").append(inse);
 		});
 		$("#pagnation").show();
+	}
+	
+	function jm()
+	{
+		var base = new Base64(); 
+		var tableId = document.getElementById("tb1"); 
+		var str = ""; 
+		for(var i=1;i<tableId.rows.length;i++) 
+		{ 
+		tableId.rows[i].cells[2].innerHTML = base.decode(tableId.rows[i].cells[2].innerHTML); 
+		}
 	}
 	</script>
 </body>
